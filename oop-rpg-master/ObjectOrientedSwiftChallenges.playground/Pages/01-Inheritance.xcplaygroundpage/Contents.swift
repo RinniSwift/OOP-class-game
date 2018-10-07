@@ -53,5 +53,26 @@ frank.melee()
 
 // Fighters have 8 hit points, Wizards should have 4, Priests should have 6.
 
+class Wizard: Player {
+    override init(name: String) {
+        super.init(name: name)
+        self.hitPoints = 4
+    }
+    
+    func castSpell() {
+        print("wallaa")
+    }
+}
+
+class Priest: Player {
+    override init(name: String) {
+        super.init(name: name)
+        self.hitPoints = 6
+    }
+    
+    func castSpell() {
+        print("may the demons be with you")
+    }
+}
 
 //: [Next](@next)

@@ -30,9 +30,14 @@ class Fighter: Player {
     }
 }
 
+class CastSpell: Player {
+    func castSpell() {
+        print("I cast a spell on you!")
+    }
+}
 
 // Fighter inherits all methods and properties from Player
-class Wizard: Player {
+class Wizard: CastSpell {
     
     override init(name: String) {
         super.init(name: name)
@@ -40,12 +45,9 @@ class Wizard: Player {
         hitPoints = 4
     }
     
-    func castSpell() {
-        print("Do magic stuff")
-    }
 }
 
-class Priest: Player {
+class Priest: CastSpell {
     
     override init(name: String) {
         super.init(name: name)
@@ -53,9 +55,6 @@ class Priest: Player {
         hitPoints = 6
     }
     
-    func castSpell() {
-        print("Do magic stuff")
-    }
 }
 
 
@@ -80,5 +79,6 @@ joe.melee()
 // - Challenge: 
 
 // Modify both Wizard and Priest, they should inherit from SpellCaster instead of Player.
+
 
 //: [Next](@next)

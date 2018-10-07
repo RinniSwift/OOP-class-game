@@ -2,6 +2,15 @@
 
 import Foundation
 
+protocol Casts {
+    func castSpell()
+}
+
+protocol Fights {
+    func melee()
+}
+
+
 class Player {
     var name: String
     var hitPoints: Int
@@ -16,7 +25,7 @@ class Player {
     }
 }
 
-class Fighter: Player {
+class Fighter: Player, Fights {
     
     override init(name: String) {
         super.init(name: name)
@@ -69,6 +78,13 @@ class Elf: Player {
     }
     
     // Needs to cast spells and melee...
+    func melee() {
+        print("\(name) attacking with a sword!")
+    }
+    
+    func castSpell() {
+        print("casting a spell on you!")
+    }
 }
 
 // Elves cast spells and use swords?
@@ -99,13 +115,16 @@ var frank = Fighter(name: "Frank")
 frank.melee()
 
 var elrond = Elf(name: "Elrond")
+elrond.melee()
 // ????
 
 
 // - Challenge: 
 
 // Define two protocols Casts, and Fights. Casts should define the castSpell() method. 
-//  And, Fights should define the melee() method. 
+//  And, Fights should define the melee() method.
+
+
 
 // - Challenge: 
 
