@@ -55,6 +55,7 @@ class Fighter: Player, Fights {
         
         hitPoints = 8
     }
+    
 }
 
 
@@ -114,6 +115,7 @@ elrond.melee()
 
 var george = Fighter(name: "George", battleCry: "Arrr!")
 george.melee()
+george.battleCry
 
 // Now that the fighter has a battle cry they should use it when they attack.
 

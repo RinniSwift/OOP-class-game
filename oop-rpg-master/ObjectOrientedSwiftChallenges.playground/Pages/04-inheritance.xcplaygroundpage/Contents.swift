@@ -6,11 +6,25 @@ import Foundation
 // Casters cast, Fighters melee.
 
 protocol Casts {
+    var name: String { get }
     func castSpell()
 }
 
 protocol Fights {
+    var name: String { get }
     func melee()
+}
+
+extension Fights {
+    func melee() {
+        print("\(name) is attacking")
+    }
+}
+
+extension Casts {
+    func castSpell() {
+        print("\(name) is casting a spell")
+    }
 }
 
 
@@ -40,9 +54,9 @@ class Fighter: Player, Fights {
         hitPoints = 8
     }
     
-    func melee() {
-        print("\(name) Attacks with Sword!")
-    }
+//    func melee() {
+//        print("\(name) Attacks with Sword!")
+//    }
 }
 
 
@@ -70,9 +84,9 @@ class Priest: Player, Casts {
         hitPoints = 6
     }
     
-    func castSpell() {
-        print("\(name) Casts spell")
-    }
+//    func castSpell() {
+//        print("\(name) Casts spell")
+//    }
     
 }
 
@@ -85,14 +99,14 @@ class Elf: Player, Fights, Casts {
         
         hitPoints = 6
     }
-    
-    func castSpell() {
-        print("\(name) Casts spell")
-    }
-    
-    func melee() {
-        print("\(name) Attacks with Sword!")
-    }
+//
+//    func castSpell() {
+//        print("\(name) Casts spell")
+//    }
+//
+//    func melee() {
+//        print("\(name) Attacks with Sword!")
+//    }
 }
 
 // Wizard adds a new method

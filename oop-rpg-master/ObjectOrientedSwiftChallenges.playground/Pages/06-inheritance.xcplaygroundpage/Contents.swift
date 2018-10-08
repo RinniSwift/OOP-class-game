@@ -45,11 +45,12 @@ class Player {
 
 
 class Fighter: Player, Fights {
+    var battleCry: String
     
-    override init(name: String) {
+    init(name: String, battleCry: String) {
+        self.battleCry = battleCry
         super.init(name: name)
-        
-        hitPoints = 8
+        hitPoints = 5
     }
 }
 
@@ -101,7 +102,7 @@ var clancy = Priest(name: "Clancy")
 clancy.castSpell()
 
 // Fighter
-var frank = Fighter(name: "Frank")
+var frank = Fighter(name: "Frank", battleCry: "huzzah")
 frank.melee()
 
 var elrond = Elf(name: "Elrond")

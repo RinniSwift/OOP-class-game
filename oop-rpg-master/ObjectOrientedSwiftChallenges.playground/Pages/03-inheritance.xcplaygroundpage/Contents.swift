@@ -70,7 +70,7 @@ class Priest: Spellcaster {
 // Our game would be more fun with an Elf!
 // Elf can both melee() and castSpell()
 
-class Elf: Player {
+class Elf: Player, Casts, Fights {
     override init(name: String) {
         super.init(name: name)
         
